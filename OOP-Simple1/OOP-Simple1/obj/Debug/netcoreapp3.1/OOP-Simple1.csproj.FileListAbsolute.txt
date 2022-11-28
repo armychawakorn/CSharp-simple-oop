@@ -1,0 +1,12 @@
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\bin\Debug\netcoreapp3.1\OOP-Simple1.exe
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\bin\Debug\netcoreapp3.1\OOP-Simple1.deps.json
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\bin\Debug\netcoreapp3.1\OOP-Simple1.runtimeconfig.json
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\bin\Debug\netcoreapp3.1\OOP-Simple1.runtimeconfig.dev.json
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\bin\Debug\netcoreapp3.1\OOP-Simple1.dll
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\bin\Debug\netcoreapp3.1\OOP-Simple1.pdb
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\obj\Debug\netcoreapp3.1\OOP-Simple1.AssemblyInfoInputs.cache
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\obj\Debug\netcoreapp3.1\OOP-Simple1.AssemblyInfo.cs
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\obj\Debug\netcoreapp3.1\OOP-Simple1.csproj.CoreCompileInputs.cache
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\obj\Debug\netcoreapp3.1\OOP-Simple1.dll
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\obj\Debug\netcoreapp3.1\OOP-Simple1.pdb
+C:\Users\ADmin\Documents\GitHub\CSharp-simple-oop\OOP-Simple1\OOP-Simple1\obj\Debug\netcoreapp3.1\OOP-Simple1.genruntimeconfig.cache
