@@ -1,0 +1,13 @@
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\bin\Debug\netcoreapp3.1\OOP2-Simple.exe
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\bin\Debug\netcoreapp3.1\OOP2-Simple.deps.json
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\bin\Debug\netcoreapp3.1\OOP2-Simple.runtimeconfig.json
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\bin\Debug\netcoreapp3.1\OOP2-Simple.runtimeconfig.dev.json
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\bin\Debug\netcoreapp3.1\OOP2-Simple.dll
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\bin\Debug\netcoreapp3.1\OOP2-Simple.pdb
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\obj\Debug\netcoreapp3.1\OOP2-Simple.csprojAssemblyReference.cache
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\obj\Debug\netcoreapp3.1\OOP2-Simple.AssemblyInfoInputs.cache
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\obj\Debug\netcoreapp3.1\OOP2-Simple.AssemblyInfo.cs
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\obj\Debug\netcoreapp3.1\OOP2-Simple.csproj.CoreCompileInputs.cache
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\obj\Debug\netcoreapp3.1\OOP2-Simple.dll
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\obj\Debug\netcoreapp3.1\OOP2-Simple.pdb
+C:\Users\ADmin\source\repos\OOP2-Simple\OOP2-Simple\obj\Debug\netcoreapp3.1\OOP2-Simple.genruntimeconfig.cache
