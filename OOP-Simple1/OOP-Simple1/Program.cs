@@ -6,7 +6,9 @@ namespace OOP_Simple1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("นายชวกร เนืองภา");
+            Console.WriteLine("ชื่อ: นายชวกร เนืองภา");
+            Console.WriteLine("รหัสนักศึกษา: 653450087-5");
+            Console.WriteLine("อีเมล: Chawakorn.n@kkumail.com");
             Console.ReadKey();
         }
     }
