@@ -63,11 +63,11 @@ namespace Calculator
             }
         }
 
-        public void Calculate(string op)
+        public void Execute(string op)
         {
             Display().Text.TrimEnd('.');
             Display2.AppendText($" {Display().Text} {op}");
-            double operand = Double.Parse(Display().Text);
+            double DisplayOP = Double.Parse(Display().Text);
             CheckStage = true;
             if (Op == "/" && Display().Text == "0")
             {
@@ -77,16 +77,16 @@ namespace Calculator
             switch (Op)
             {
                 case "+":
-                    sum += operand;
+                    sum += DisplayOP;
                     break;
                 case "-":
-                    sum -= operand;
+                    sum -= DisplayOP;
                     break;
                 case "*":
-                    sum *= operand;
+                    sum *= DisplayOP;
                     break;
                 case "/":
-                    sum /= operand;
+                    sum /= DisplayOP;
                     break;
                 default:
                     break;
@@ -108,35 +108,25 @@ namespace Calculator
             Display().Text = double.Parse(DisplayText).ToString("#,##0");
             CheckStage = false;
         }
-        private void ClearCE(object sender, EventArgs e)
-        {
-            ClearCE();
-        }
-
-        private void btnclear_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
-
         private void OperationContoller(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             switch (btn.Text)
             {
                 case "+":
-                    Calculate("+");
+                    Execute("+");
                     break;
                 case "-":
-                    Calculate("-");
+                    Execute("-");
                     break;
                 case "*":
-                    Calculate("*");
+                    Execute("*");
                     break;
                 case "/":
-                    Calculate("/");
+                    Execute("/");
                     break;
                 case "=":
-                    Calculate("+");
+                    Execute("+");
                     string result = Display().Text;
                     Clear();
                     CheckStage = true;
@@ -144,6 +134,18 @@ namespace Calculator
                     break;
                 default:
                     break;
+            }
+        }
+        private void ClearController(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if(btn.Text == "C")
+            {
+                Clear();
+            }
+            else
+            {
+                ClearCE();
             }
         }
     }
