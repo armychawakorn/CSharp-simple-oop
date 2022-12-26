@@ -1,147 +1,150 @@
+using System.Configuration;
+
 namespace Calculator
 {
     public partial class Calculator : Form
     {
-        string numbercache = "";
-        List<string> numbers = new List<string>();
-        List<string> operators = new List<string>();
+        private TextBox Display() => this.Display1;
+        private const string DisplayText = "0";
+        private bool CheckStage = false;
+        private double sum = 0;
+        private string Op = "+";
         public Calculator()
         {
             InitializeComponent();
+            Display().Text = DisplayText;
         }
 
-        private void btn1_Click(object sender, EventArgs e)
+        private void btnNumberController(object sender, EventArgs e)
         {
-            Addnumbercache(btn1);
-            UpdateDisplay1(numbercache);
+            Button btn = (Button)sender;
+            if (btn.Text == ".")
+            {
+                Dot();
+            }
+            else
+            {
+                Number(((Button)sender).Text);
+            }
         }
 
-        private void btn2_Click(object sender, EventArgs e)
+        public void Dot()
         {
-            Addnumbercache(btn2);
-            UpdateDisplay1(numbercache);
+            if (CheckStage)
+            {
+                CheckStage = false;
+                Display().Text = DisplayText;
+            }
+            if (Display().Text.Contains("."))
+            {
+                return;
+            }
+            else
+            {
+                Display().AppendText(".");
+            }
         }
 
-        private void btn3_Click(object sender, EventArgs e)
+        public void Number(string num)
         {
-            Addnumbercache(btn3);
-            UpdateDisplay1(numbercache);
+            if (CheckStage)
+            {
+                CheckStage = false;
+                Display().Text = DisplayText;
+            }
+            Display().AppendText(num);
+            if (Display().Text.Contains("."))
+            {
+                return;
+            }
+            else
+            {
+                Display().Text = Double.Parse(Display().Text).ToString("#,##0");
+            }
         }
 
-        private void btn4_Click(object sender, EventArgs e)
+        public void Calculate(string op)
         {
-            Addnumbercache(btn4);
-            UpdateDisplay1(numbercache);
+            Display().Text.TrimEnd('.');
+            Display2.AppendText($" {Display().Text} {op}");
+            double operand = Double.Parse(Display().Text);
+            CheckStage = true;
+            if (Op == "/" && Display().Text == "0")
+            {
+                Display().Text = double.Parse(DisplayText).ToString("#,##0");
+                return;
+            }
+            switch (Op)
+            {
+                case "+":
+                    sum += operand;
+                    break;
+                case "-":
+                    sum -= operand;
+                    break;
+                case "*":
+                    sum *= operand;
+                    break;
+                case "/":
+                    sum /= operand;
+                    break;
+                default:
+                    break;
+            }
+            Op = op;
+            Display().Text = sum.ToString("#,##0");
         }
 
-        private void btn5_Click(object sender, EventArgs e)
+        public void Clear()
         {
-            Addnumbercache(btn5);
-            UpdateDisplay1(numbercache);
+            sum = 0;
+            Display2.Clear();
+            Display().Text = DisplayText;
+            CheckStage = false;
         }
 
-        private void btn6_Click(object sender, EventArgs e)
+        public void ClearCE()
         {
-            Addnumbercache(btn6);
-            UpdateDisplay1(numbercache);
+            Display().Text = double.Parse(DisplayText).ToString("#,##0");
+            CheckStage = false;
         }
-
-        private void btn7_Click(object sender, EventArgs e)
+        private void ClearCE(object sender, EventArgs e)
         {
-            Addnumbercache(btn7);
-            UpdateDisplay1(numbercache);
-        }
-
-        private void btn8_Click(object sender, EventArgs e)
-        {
-            Addnumbercache(btn8);
-            UpdateDisplay1(numbercache);
-        }
-
-        private void btn9_Click(object sender, EventArgs e)
-        {
-            Addnumbercache(btn9);
-            UpdateDisplay1(numbercache);
-        }
-
-        private void btn0_Click(object sender, EventArgs e)
-        {
-            Addnumbercache(btn0);
-            UpdateDisplay1(numbercache);
-        }
-        
-        private void add_Click(object sender, EventArgs e)
-        {
-            operators.Add("+");
-            numbers.Add(numbercache);
-            Display2.Text += string.Format("{0}{1}", numbercache, "+");
-            Clearnumbercache();
-        }
-
-        private void rem_Click(object sender, EventArgs e)
-        {
-            operators.Add("-");
-            numbers.Add(numbercache);
-            Display2.Text += string.Format("{0}{1}", numbercache, "-");
-            Clearnumbercache();
-        }
-
-        private void plus_Click(object sender, EventArgs e)
-        {
-            operators.Add("*");
-            numbers.Add(numbercache);
-            Display2.Text += string.Format("{0}{1}", numbercache, "*");
-            Clearnumbercache();
-        }
-
-        private void devide_Click(object sender, EventArgs e)
-        {
-            operators.Add("/");
-            numbers.Add(numbercache);
-            Display2.Text += string.Format("{0}{1}", numbercache, "/");
-            Clearnumbercache();
-        }
-
-        private void btndot_Click(object sender, EventArgs e)
-        {
-            Addnumbercache(btndot);
-            UpdateDisplay1(numbercache);
+            ClearCE();
         }
 
         private void btnclear_Click(object sender, EventArgs e)
         {
+            Clear();
         }
 
-        private void Equal_Click(object sender, EventArgs e)
+        private void OperationContoller(object sender, EventArgs e)
         {
-            numbers.Add(numbercache);
-            double sum = 0;
-            foreach(string value in numbers)
+            Button btn = (Button)sender;
+            switch (btn.Text)
             {
-                foreach(string op in operators)
-                {
-                    switch(op)
-                    {
-                        case "+":
-                            sum = sum + Convert.ToDouble(value);
-                            break;
-                    }
-                }
+                case "+":
+                    Calculate("+");
+                    break;
+                case "-":
+                    Calculate("-");
+                    break;
+                case "*":
+                    Calculate("*");
+                    break;
+                case "/":
+                    Calculate("/");
+                    break;
+                case "=":
+                    Calculate("+");
+                    string result = Display().Text;
+                    Clear();
+                    CheckStage = true;
+                    Display().Text = double.Parse(result).ToString("#,##0");
+                    break;
+                default:
+                    break;
             }
-            Display1.Text = sum.ToString();
-        }
-
-        private void Addnumbercache(Button btn)
-        {
-            numbercache += btn.Text;
-        }
-        private void Clearnumbercache()
-        {
-            numbercache = "";
-        }
-        private void UpdateDisplay1(string value)
-        {
-            Display1.Text = value;
         }
     }
 }
